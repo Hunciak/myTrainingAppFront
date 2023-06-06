@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "types": [
-        ".././myTrainingAppBack/types"
+        "../myTrainingAppBack/types"
       ]
     }
   }
