@@ -1,6 +1,7 @@
 import {useState, SyntheticEvent} from "react";
 import {IUserSingUp} from "types";
 import {Btn} from "../common/Btn";
+import './SingUp.css';
 
 
 export const SingUp = () => {
@@ -60,7 +61,7 @@ export const SingUp = () => {
     }
 
     return (
-        <div>
+        <div className='registration'>
             <form className='sing-up' onSubmit={saveUser}>
                 <h1>Rejstracja</h1>
                 <input type="text"
@@ -89,12 +90,12 @@ export const SingUp = () => {
                        name='gender'
                        value={form.gender}
                        onChange={e => updateForm('gender', e.target.value)}
-                />
+                />Mężczyzna
                 <input type="radio"
                        name='gender'
                        value={form.gender}
                        onChange={e => updateForm('gender', e.target.value)}
-                />
+                />Kobieta
                 <Btn text={'Zarejestruj'}/>
             </form>
 
