@@ -6,7 +6,7 @@ import {SingUp} from "./compenents/SingUp/SingUp";
 export const App = () => {
     return (
         <Routes>
-            <Route path='/singup' element={<SingUp/>}/>
+            <Route path='/signup' element={<SingUp/>}/>
 
         </Routes>
 

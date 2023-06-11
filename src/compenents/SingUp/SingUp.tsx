@@ -26,19 +26,21 @@ export const SingUp = () => {
 
         const wrapForm = {
             name: form.name,
+            email: form.email,
             password: form.password,
             weight: form.weight,
             height: form.weight,
             gender: form.gender,
         }
         try {
-            const res = await fetch('http://localhost:3001/singup', {
+            console.log("wrap przed wyslaniem", JSON.stringify(form))
+            const res = await fetch(`http://localhost:3001/signup`, {
                 method: 'POST',
                 headers: {
-                    'Content-type': 'application/json',
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(wrapForm),
-            });
+                body: JSON.stringify(form),
+            })
             const data = await res.json();
             console.log(data);
 
