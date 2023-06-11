@@ -9,6 +9,7 @@ export const SingUp = () => {
     const [loading, setLoading] = useState(false);
     const [form, setForm] = useState<IUserSingUp>({
         name: '',
+        email: '',
         password: '',
         weight: 0,
         height: 0,
@@ -68,6 +69,11 @@ export const SingUp = () => {
                        placeholder='Nazwa użytkownika'
                        value={form.name}
                        onChange={e => updateForm('name', e.target.value)}/>
+                <input type="email"
+                       placeholder='email'
+                       value={form.email}
+                       onChange={e => updateForm('email', e.target.value)}
+                />
                 <input type="password"
                        placeholder='Hasło'
                        value={form.password}
@@ -86,15 +92,19 @@ export const SingUp = () => {
                        maxLength={3}
                        onChange={e => updateForm('height', e.target.value)}
                 />
-                <input type="radio"
-                       name='gender'
-                       value={form.gender}
-                       onChange={e => updateForm('gender', e.target.value)}
+                <input
+                    className='gender'
+                    type="radio"
+                    name='gender'
+                    value={form.gender}
+                    onChange={e => updateForm('gender', e.target.value)}
                 />Mężczyzna
-                <input type="radio"
-                       name='gender'
-                       value={form.gender}
-                       onChange={e => updateForm('gender', e.target.value)}
+                <input
+                    className='gender'
+                    type="radio"
+                    name='gender'
+                    value={form.gender}
+                    onChange={e => updateForm('gender', e.target.value)}
                 />Kobieta
                 <Btn text={'Zarejestruj'}/>
             </form>
