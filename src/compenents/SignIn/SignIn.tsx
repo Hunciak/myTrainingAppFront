@@ -19,6 +19,7 @@ export const SignIn = () => {
         setLoading(true);
 
         try {
+            console.log('doszedlem do signIn form', form)
             const res = await fetch(`http://localhost:3001/signin`, {
                 method: 'POST',
                 headers: {
@@ -67,11 +68,11 @@ export const SignIn = () => {
                         Username: <br/>
                         <input
                             type="text"
-                            name="email"
+                            name="name"
                             required
                             maxLength={30}
                             value={form.name}
-                            onChange={e => updateForm('email', e.target.value)}/>
+                            onChange={e => updateForm('name', e.target.value)}/>
                     </label>
 
                     <label>
