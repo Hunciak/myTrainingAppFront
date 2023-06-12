@@ -1,13 +1,13 @@
 import {useState, SyntheticEvent} from "react";
-import {IUserSingUp} from "types";
+import {IUserSignUp} from "types";
 import {Btn} from "../common/Btn";
-import './SingUp.css';
+import './SignUp.css';
 
 
-export const SingUp = () => {
+export const SignUp = () => {
     const [id, setId] = useState('');
     const [loading, setLoading] = useState(false);
-    const [form, setForm] = useState<IUserSingUp>({
+    const [form, setForm] = useState<IUserSignUp>({
         name: '',
         email: '',
         password: '',
@@ -15,23 +15,15 @@ export const SingUp = () => {
         height: 0,
         gender: '',
     });
-    // const [repPass, setRepPass] = useState({
-    //     validPass: '',
-    // });
+    const [checkPassword, setCheckPassword] = useState({
+        validPassword: '',
+    });
 
     const saveUser = async (e: SyntheticEvent) => {
         e.preventDefault();
 
         setLoading(true);
 
-        const wrapForm = {
-            name: form.name,
-            email: form.email,
-            password: form.password,
-            weight: form.weight,
-            height: form.weight,
-            gender: form.gender,
-        }
         try {
             console.log("wrap przed wyslaniem", JSON.stringify(form))
             const res = await fetch(`http://localhost:3001/signup`, {
@@ -43,6 +35,9 @@ export const SingUp = () => {
             })
             const data = await res.json();
             console.log(data);
+            if (!checkPassword || checkPassword.validPassword !== form.password) {
+                alert('Podane hasła nie są takie same.');
+            }
 
         } catch (e) {
             console.log('Błąd...', e);
@@ -55,6 +50,10 @@ export const SingUp = () => {
             ...form,
             [key]: value,
         }))
+        setCheckPassword(form => ({
+            ...form,
+            [key]: value
+        }))
     }
     if (loading) {
         return <p>Trwa rejstracja</p>
@@ -65,7 +64,7 @@ export const SingUp = () => {
 
     return (
         <div className='registration'>
-            <form className='sing-up' onSubmit={saveUser}>
+            <form className='sign-up' onSubmit={saveUser}>
                 <h1>Rejstracja</h1>
                 <input type="text"
                        placeholder='Nazwa użytkownika'
@@ -82,35 +81,44 @@ export const SingUp = () => {
                        maxLength={30}
                        onChange={e => updateForm('password', e.target.value)}
                 />
+                <input type="password"
+                       placeholder='Powtórz hasło'
+                       value={checkPassword.validPassword}
+                       maxLength={30}
+                       onChange={e => updateForm('validPassword', e.target.value)}
+                />
                 <input type="number"
                        placeholder='Aktualna waga'
                        value={form.weight}
                        maxLength={3}
                        onChange={e => updateForm('weight', e.target.value)}
+                       // Usunąć możliwość napisania 0 na początku
+
                 />
                 <input type="number"
                        placeholder='Wzrost'
                        value={form.height}
                        maxLength={3}
                        onChange={e => updateForm('height', e.target.value)}
+                    // Usunąć możliwość napisania 0 na początku
+
                 />
                 <input
                     className='gender'
                     type="radio"
                     name='gender'
-                    value={form.gender}
+                    value='male'
                     onChange={e => updateForm('gender', e.target.value)}
                 />Mężczyzna
                 <input
                     className='gender'
                     type="radio"
                     name='gender'
-                    value={form.gender}
+                    value='female'
                     onChange={e => updateForm('gender', e.target.value)}
                 />Kobieta
                 <Btn text={'Zarejestruj'}/>
             </form>
-
         </div>
     )
 };

@@ -7,8 +7,8 @@ export const SignIn = () => {
     const [loading, setLoading] = useState(false);
     const [id, setId] = useState('');
     const [form, setForm] = useState<IUserLogIn>({
-        name: '',
-        password: '',
+            name: '',
+            password: '',
         }
     );
 
@@ -60,7 +60,7 @@ export const SignIn = () => {
 
     return (
         <div>
-            <form className='sign-in' action="" onSubmit={signIn}>
+            <form className='sign-in' onSubmit={signIn}>
                 <h1>Zaloguj się</h1>
                 <p>
                     <label>

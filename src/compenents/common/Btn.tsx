@@ -1,5 +1,5 @@
 import React from "react";
-// import './Btn.css';
+import './Btn.css';
 import {Link} from "react-router-dom";
 
 interface Props {
@@ -9,6 +9,6 @@ interface Props {
 
 export const Btn = (props: Props) => (
     props.to
-        ? <Link className='btn' to={props.to}>{props.text}</Link>
-        : <button>{props.text}</button>
+        ? <Link className='link' to={props.to}>{props.text}</Link>
+        : <button className='btn'>{props.text}</button>
 );
