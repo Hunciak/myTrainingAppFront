@@ -33,7 +33,7 @@ export const SingUp = () => {
             gender: form.gender,
         }
         try {
-            console.log("wrap przed wyslaniem", JSON.stringify(form))
+            console.log("wrap przed wyslaniem", form, wrapForm)
             const res = await fetch(`http://localhost:3001/signup`, {
                 method: 'POST',
                 headers: {
@@ -98,14 +98,14 @@ export const SingUp = () => {
                     className='gender'
                     type="radio"
                     name='gender'
-                    value={form.gender}
+                    value="male"
                     onChange={e => updateForm('gender', e.target.value)}
                 />Mężczyzna
                 <input
                     className='gender'
                     type="radio"
                     name='gender'
-                    value={form.gender}
+                    value='female'
                     onChange={e => updateForm('gender', e.target.value)}
                 />Kobieta
                 <Btn text={'Zarejestruj'}/>
