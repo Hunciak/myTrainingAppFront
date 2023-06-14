@@ -1,6 +1,7 @@
 import React, {SyntheticEvent, useState} from "react";
 import {IUserLogIn} from "types";
 import {Btn} from "../common/Btn";
+import './SignIn.css';
 
 
 export const SignIn = () => {
@@ -15,17 +16,16 @@ export const SignIn = () => {
 
     const signIn = async (e: SyntheticEvent) => {
         e.preventDefault();
-
         setLoading(true);
-
         try {
             console.log('doszedlem do signIn form', form)
             const res = await fetch(`http://localhost:3001/signin`, {
                 method: 'POST',
+                body: JSON.stringify(form),
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(form)
+
             })
             const getId = await res.json();
             setId(getId.signIn);
@@ -60,38 +60,24 @@ export const SignIn = () => {
     }
 
     return (
-        <div>
+        <div className='login'>
             <form className='sign-in' onSubmit={signIn}>
                 <h1>Zaloguj się</h1>
-                <p>
-                    <label>
-                        Username: <br/>
-                        <input
-                            type="text"
-                            name="name"
-                            required
-                            maxLength={30}
-                            value={form.name}
-                            onChange={e => updateForm('name', e.target.value)}/>
-                    </label>
-
-                    <label>
-                        Password: <br/>
-                        <input
-                            type="text"
-                            name="password"
-                            required
-                            maxLength={30}
-                            value={form.password}
-                            onChange={e => updateForm('password', e.target.value)}
-                        />
-                    </label>
-
-                </p>
+                <input type="text"
+                       placeholder='Nazwa użytkownika'
+                       name="name"
+                       required
+                       value={form.name}
+                       onChange={e => updateForm('name', e.target.value)}/>
+                <input type="password"
+                       placeholder='Hasło'
+                       name="password"
+                       required
+                       value={form.password}
+                       onChange={e => updateForm('password', e.target.value)}
+                />
                 <Btn text={'SignIn'}/>
-
             </form>
-
         </div>
     )
 }

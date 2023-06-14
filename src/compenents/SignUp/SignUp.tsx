@@ -69,28 +69,34 @@ export const SignUp = () => {
                 <input type="text"
                        placeholder='Nazwa użytkownika'
                        value={form.name}
+                       maxLength={30}
+                       required
                        onChange={e => updateForm('name', e.target.value)}/>
                 <input type="email"
                        placeholder='email'
                        value={form.email}
+                       required
                        onChange={e => updateForm('email', e.target.value)}
                 />
                 <input type="password"
                        placeholder='Hasło'
                        value={form.password}
                        maxLength={30}
+                       required
                        onChange={e => updateForm('password', e.target.value)}
                 />
                 <input type="password"
                        placeholder='Powtórz hasło'
                        value={checkPassword.validPassword}
                        maxLength={30}
+                       required
                        onChange={e => updateForm('validPassword', e.target.value)}
                 />
                 <input type="number"
                        placeholder='Aktualna waga'
                        value={form.weight}
                        maxLength={3}
+                       required
                        onChange={e => updateForm('weight', e.target.value)}
                        // Usunąć możliwość napisania 0 na początku
 
@@ -99,6 +105,7 @@ export const SignUp = () => {
                        placeholder='Wzrost'
                        value={form.height}
                        maxLength={3}
+                       required
                        onChange={e => updateForm('height', e.target.value)}
                     // Usunąć możliwość napisania 0 na początku
 
