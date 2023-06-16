@@ -27,6 +27,11 @@ input {
     border: none;
     border-bottom: 1px solid gray;
 }
+select{
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid gray;
+}
 
 
 

@@ -2,6 +2,7 @@ import React, {SyntheticEvent, useState} from "react";
 import {IUserLogIn} from "types";
 import {Btn} from "../common/Btn";
 import './SignIn.css';
+import {Link} from "react-router-dom";
 
 
 export const SignIn = () => {
@@ -76,6 +77,7 @@ export const SignIn = () => {
                        value={form.password}
                        onChange={e => updateForm('password', e.target.value)}
                 />
+                <span>Nie masz konta? Kliknij tutaj <Link to='/signup'>Rejstracja</Link></span>
                 <Btn text={'SignIn'}/>
             </form>
         </div>

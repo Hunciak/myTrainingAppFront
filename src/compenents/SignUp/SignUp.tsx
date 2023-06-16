@@ -2,6 +2,7 @@ import {useState, SyntheticEvent} from "react";
 import {IUserSignUp} from "types";
 import {Btn} from "../common/Btn";
 import './SignUp.css';
+import {Link} from "react-router-dom";
 
 
 export const SignUp = () => {
@@ -92,8 +93,8 @@ export const SignUp = () => {
                        required
                        onChange={e => updateForm('validPassword', e.target.value)}
                 />
-                <input type="number"
-                       placeholder='Aktualna waga'
+                <input type="text"
+                       placeholder='Aktualna waga(kg)'
                        value={form.weight}
                        maxLength={3}
                        required
@@ -101,8 +102,8 @@ export const SignUp = () => {
                        // Usunąć możliwość napisania 0 na początku
 
                 />
-                <input type="number"
-                       placeholder='Wzrost'
+                <input type="text"
+                       placeholder='Wzrost(cm)'
                        value={form.height}
                        maxLength={3}
                        required
@@ -110,20 +111,12 @@ export const SignUp = () => {
                     // Usunąć możliwość napisania 0 na początku
 
                 />
-                <input
-                    className='gender'
-                    type="radio"
-                    name='gender'
-                    value='male'
-                    onChange={e => updateForm('gender', e.target.value)}
-                />Mężczyzna
-                <input
-                    className='gender'
-                    type="radio"
-                    name='gender'
-                    value='female'
-                    onChange={e => updateForm('gender', e.target.value)}
-                />Kobieta
+                <select>
+                    <option value="null">Wybierz płeć</option>
+                    <option value="male">Mężczyzna</option>
+                    <option value="female">Kobieta</option>
+                </select>
+                <span>Masz konto? Kliknij tutaj <Link to='/signin'>Zaloguj</Link></span>
                 <Btn text={'Zarejestruj'}/>
             </form>
         </div>
