@@ -111,7 +111,7 @@ export const SignUp = () => {
                     // Usunąć możliwość napisania 0 na początku
 
                 />
-                <select>
+                <select onChange={e => updateForm('gender', e.target.value)}>
                     <option value="null">Wybierz płeć</option>
                     <option value="male">Mężczyzna</option>
                     <option value="female">Kobieta</option>
