@@ -56,8 +56,27 @@ export const CreateNewExercise = () => {
         )
     }
 
-    const addExercise = () => {
+    const addExercise = (e:React.FormEvent):void => {
+        e.preventDefault()
         //dodanie nowego ćwiczenia do listy
+        const nextExercise = React.createElement(
+            'li',
+            { key:newExercise.name },
+            "cos", //dodac strukture listy
+            React.createElement(
+                'button',
+                { key:newExercise.name, onclick: () => deleteExercise(newExercise.name)  },
+                'usuń'
+            )
+          );
+
+    }
+
+    const deleteExercise = (key: string): void => {
+        const newExerciseList = choosenExercises.filter((nextExercise)=> nextExercise.name !== key)
+        setChoosenExercises(newExerciseList)
+        console.log('nowa lista zajec po usunieciu', choosenExercises);
+        
     }
 
 
