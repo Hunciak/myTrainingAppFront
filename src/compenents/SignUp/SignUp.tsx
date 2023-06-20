@@ -12,8 +12,8 @@ export const SignUp = () => {
         name: '',
         email: '',
         password: '',
-        weight: 0,
-        height: 0,
+        weight: '',
+        height: '',
         gender: '',
     });
     const [checkPassword, setCheckPassword] = useState({
@@ -98,7 +98,7 @@ export const SignUp = () => {
                        value={form.weight}
                        maxLength={3}
                        required
-                       onChange={e => updateForm('weight', e.target.value)}
+                       onChange={e => updateForm('weight', Number(e.target.value))}
                        // Usunąć możliwość napisania 0 na początku
 
                 />
@@ -107,7 +107,7 @@ export const SignUp = () => {
                        value={form.height}
                        maxLength={3}
                        required
-                       onChange={e => updateForm('height', e.target.value)}
+                       onChange={e => updateForm('height', Number(e.target.value))}
                     // Usunąć możliwość napisania 0 na początku
 
                 />
