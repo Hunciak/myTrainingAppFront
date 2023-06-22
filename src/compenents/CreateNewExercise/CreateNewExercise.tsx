@@ -25,15 +25,16 @@ export const CreateNewExercise = () => {
         name: '',
     }]);
 
-    const [addCustomFlag, setAddCustomFlag] = useState<boolean>(false)
+    const [addCustomFlag, setAddCustomFlag] = useState<boolean>(true)
 
     useEffect(() => {
 
         try {
             (async() => {
-                const res = await fetch(`http://localhost:3001/user/getexercises`)
+                const res = await fetch(`http://localhost:3001/user/getexercises`, {
+                    credentials: "include",
+                })
                 const exercises = await res.json();
-                console.log('pobrane nazwy ćwiczeń',exercises)
                 setExerciseList(exercises)
             })()
         } catch (error) {
@@ -41,20 +42,29 @@ export const CreateNewExercise = () => {
         }
     }, [])
 
-    const selectExercise = () => {
-        return (
-            <select name="" id="exercise" value="name" onChange={e => updateForm('name', e.target.value)}>
+    const selectExercise =
+            <select placeholder="Wprowadź nazwę ćwiczenia" defaultValue={exerciseList[0].name} onChange={e => updateForm('name', e.target.value)}>
                 {
                     exerciseList.filter((exercise) => {
-                        return exercise.name === 'name';
+                        return exercise.name;
                     })
                         .map(exercise => (
                             <option key={exercise.name} value={exercise.name}>{exercise.name}</option>
                         ))
                 }
             </select>
-        )
+
+    const customFlag = (e: SyntheticEvent) => {
+        e.preventDefault();
+        setAddCustomFlag(!addCustomFlag)
     }
+    const inputExercise =
+        <input type="text"
+               placeholder='Nazwa ćwiczenia'
+               name="name"
+               required
+               value={newExercise.name}
+               onChange={e => updateForm('name', e.target.value)}/>
 
     const addExercise = (e:React.FormEvent):void => {
         e.preventDefault()
@@ -65,13 +75,13 @@ export const CreateNewExercise = () => {
             "cos", //dodac strukture listy
             React.createElement(
                 'button',
-                { key:newExercise.name, onclick: () => deleteExercise(newExercise.name)  },
+                { key:newExercise.name, onClick: () => deleteExercise(newExercise.name)  },
                 'usuń'
             )
-          );
+        );
 
     }
-
+//@todo dodawanie cwiczen do listy, wysylanie listy cwiczen do be
     const deleteExercise = (key: string): void => {
         const newExerciseList = choosenExercises.filter((nextExercise)=> nextExercise.name !== key)
         setChoosenExercises(newExerciseList)
@@ -89,14 +99,11 @@ export const CreateNewExercise = () => {
 
     return (
         <div className='login'>
+
         <form className='sign-in' onSubmit={addExercise}>
             <h1>Stwórz swój plan treningowy</h1>
-            <input type="text"
-                   placeholder='Nazwa ćwiczenia'
-                   name="name"
-                   required
-                   value={newExercise.name}
-                   onChange={e => updateForm('name', e.target.value)}/>
+            {!addCustomFlag? inputExercise: selectExercise}
+
             <input type="number"
                    placeholder='Liczba serii'
                    name="series"
@@ -120,6 +127,7 @@ export const CreateNewExercise = () => {
             />
             <Btn text={'Dodaj'}/>
         </form>
+            <button type="button" onClick={customFlag}></button>
     </div>
 )
 }

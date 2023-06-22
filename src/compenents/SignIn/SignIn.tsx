@@ -22,12 +22,13 @@ export const SignIn = () => {
             console.log('doszedlem do signIn form', form)
             const res = await fetch(`http://localhost:3001/signin`, {
                 method: 'POST',
+                credentials: "include",
                 body: JSON.stringify(form),
                 headers: {
                     'Content-Type': 'application/json'
                 },
-
             })
+            console.log("res z be z tokenem", res)
             const getId = await res.json();
             setId(getId.signIn);
 
