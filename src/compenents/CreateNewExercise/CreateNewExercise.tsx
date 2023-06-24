@@ -35,6 +35,7 @@ export const CreateNewExercise = () => {
                     credentials: "include",
                 })
                 const exercises = await res.json();
+                console.log("odp z be:",exercises)
                 setExerciseList(exercises)
             })()
         } catch (error) {
@@ -66,19 +67,23 @@ export const CreateNewExercise = () => {
                value={newExercise.name}
                onChange={e => updateForm('name', e.target.value)}/>
 
-    const addExercise = (e:React.FormEvent):void => {
+    const addExercise = (e:React.FormEvent):any => {
         e.preventDefault()
         //dodanie nowego ćwiczenia do listy
         const nextExercise = React.createElement(
             'li',
-            { key:newExercise.name },
+            { key:newExercise.name, id:"to" },
             "cos", //dodac strukture listy
-            React.createElement(
+        ) as any;
+        const delButton = React.createElement(
                 'button',
                 { key:newExercise.name, onClick: () => deleteExercise(newExercise.name)  },
                 'usuń'
-            )
-        );
+            ) as any
+
+        console.log('chce dodac ale nie umiem', nextExercise.props.children)
+        document.body.append(nextExercise.props.children, delButton.props.children)
+        
 
     }
 //@todo dodawanie cwiczen do listy, wysylanie listy cwiczen do be
@@ -103,7 +108,7 @@ export const CreateNewExercise = () => {
         <form className='sign-in' onSubmit={addExercise}>
             <h1>Stwórz swój plan treningowy</h1>
             {!addCustomFlag? inputExercise: selectExercise}
-
+            <h1 onClick={customFlag}><Btn  text="Stwórz własne ćwiczenie"/></h1>
             <input type="number"
                    placeholder='Liczba serii'
                    name="series"
@@ -125,9 +130,10 @@ export const CreateNewExercise = () => {
                    value={newExercise.time}
                    onChange={e => updateForm('time', e.target.value)}
             />
-            <Btn text={'Dodaj'}/>
+            <Btn text={'Dodaj ćwiczenie do listy'}/>
+            <ul id="to" ></ul>
         </form>
-            <button type="button" onClick={customFlag}></button>
+
     </div>
 )
 }
