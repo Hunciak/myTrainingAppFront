@@ -3,7 +3,7 @@ import {Navbar} from "../compenents/Navbar/Navbar";
 
 
 export const Layout = () => {
-    return(
+    return (
         <main>
             <Navbar/>
         </main>

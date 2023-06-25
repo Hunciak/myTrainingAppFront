@@ -28,6 +28,9 @@ export const Navbar = () => {
                         <li>
                             <NavLink to="/signin">Sign in</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/signup">Sign up</NavLink>
+                        </li>
                     </ul>
                 </div>
             </div>
