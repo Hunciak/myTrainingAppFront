@@ -9,6 +9,7 @@ import {SignUp} from "./compenents/SignUp/SignUp";
 import {SignIn} from "./compenents/SignIn/SignIn";
 
 
+
 export const App = () => {
     return (
         <Routes>
@@ -23,4 +24,3 @@ export const App = () => {
         </Routes>
     );
 }
-
