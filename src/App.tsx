@@ -7,13 +7,15 @@ import {About} from "./pages/About/About";
 import {Sidebar} from "./compenents/Sidebar/Sidebar";
 import {SignUp} from "./compenents/SignUp/SignUp";
 import {SignIn} from "./compenents/SignIn/SignIn";
+import {EditExercise} from "./compenents/EditExercise/EditExercise";
 
 
 
 export const App = () => {
     return (
         <Routes>
-            <Route path='/eee' element={<CreateNewExercise/>}/>
+            <Route path='/eee' element={<EditExercise/>}/>
+            <Route path='/eee1' element={<CreateNewExercise/>}/>
             <Route path='/aftersignin' element={<Sidebar/>}/>
             <Route path='/' element={<Layout/>}/>
             <Route path='/signup' element={<SignUp/>}/>

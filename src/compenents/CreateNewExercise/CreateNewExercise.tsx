@@ -29,7 +29,6 @@ export const CreateNewExercise = () => {
                     credentials: "include",
                 })
                 const exercises = await res.json();
-                console.log("odp z be:",exercises)
                 setExerciseList(exercises)
             })()
         } catch (error) {
@@ -41,13 +40,15 @@ export const CreateNewExercise = () => {
        setChoosenExercises([])
     }, [status]);
 
+
+
     const customFlag = (e: SyntheticEvent) => {
         e.preventDefault();
         setAddCustomFlag(!addCustomFlag)
     }
 
     const selectExercise =
-        <select placeholder="Wprowadź nazwę ćwiczenia" defaultValue={exerciseList[0].name} onChange={e => updateForm('name', e.target.value)}>
+        <select placeholder="Wprowadź nazwę ćwiczenia" defaultValue={exerciseList[0]?.name} onChange={e => updateForm('name', e.target.value)}>
             {
                 exerciseList.filter((exercise) => {
                     return exercise.name;
@@ -84,19 +85,19 @@ export const CreateNewExercise = () => {
         }));
     };
 
-    const sendExercise = (e: SyntheticEvent) => {
+    const sendExercise = async (e: SyntheticEvent) => {
         e.preventDefault();
 
-        choosenExercises.forEach(async (exercise) => {
+
             try {
-                console.log("wrap przed wyslaniem", JSON.stringify(exercise))
-                const res = await fetch(`http://localhost:3001/user/saveexer`, {
+
+                const res = await fetch(`http://localhost:3001/user/saveexercises`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     credentials: "include",
-                    body: JSON.stringify(exercise),
+                    body: JSON.stringify(choosenExercises),
                 })
                 if (res.status === 200) {
                     setStatus('Pomyślnie dodano zestaw ćwiczeń');
@@ -107,7 +108,7 @@ export const CreateNewExercise = () => {
             } catch (e) {
                 console.log('Błąd...', e);
             }
-        })
+
     }
 
     return (

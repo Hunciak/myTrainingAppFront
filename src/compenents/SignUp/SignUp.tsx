@@ -34,8 +34,8 @@ export const SignUp = () => {
                 },
                 body: JSON.stringify(form),
             })
-            const data = await res.json();
-            console.log(data);
+
+            console.log("status: ",res.status);
             if (!checkPassword || checkPassword.validPassword !== form.password) {
                 alert('Podane hasła nie są takie same.');
             }
