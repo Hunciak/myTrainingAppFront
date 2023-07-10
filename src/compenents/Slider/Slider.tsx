@@ -9,7 +9,7 @@ export const Slider = () => {
 
     const autoScroll = true;
     let slideInterval:any;
-    let intervalTime = 5000;
+    let intervalTime = 100000;
 
     const nextSlide = () => {
         setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1);
@@ -46,9 +46,6 @@ export const Slider = () => {
                                     <h2>{slide.heading}</h2>
                                     <p>{slide.desc}</p>
                                     <hr/>
-                                    <button className="--btn--btn-primary">
-                                        Get Started
-                                    </button>
                                 </div>
                             </div>
                         )}
