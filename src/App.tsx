@@ -16,7 +16,7 @@ export const App = () => {
         <Routes>
             <Route path='/signup' element={<SignUp/>}/>
             <Route path='/logout' element={<Logout/>}/>
-            <Route path='/eee1' element={<CreateNewExercise/>}/>
+            <Route path='/createexercise' element={<CreateNewExercise/>}/>
             <Route path='/aftersignin' element={<LayoutPanel/>}/>
             <Route path='/contact' element={<Contact/>}/>
             <Route path='/' element={<Layout/>}/>

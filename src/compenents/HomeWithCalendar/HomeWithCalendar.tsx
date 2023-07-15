@@ -1,9 +1,10 @@
 import React from 'react';
-import { Calendar, momentLocalizer  } from 'react-big-calendar';
+import {Calendar, momentLocalizer} from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 import './HomeWithCalendar.css';
+import {Sidebar} from "../Sidebar/Sidebar";
 
 const localizer = momentLocalizer(moment);
 
@@ -27,16 +28,18 @@ export const HomeWithCalendar = () => {
     ];
 
     return (
-        <div>
-            <h2>Kalendarz Treningów</h2>
-            <Calendar
-                localizer={localizer} // Dodaj localizer
-                events={events}
-                startAccessor="start"
-                endAccessor="end"
-                style={{ height: 500 }}
-            />
-        </div>
+        <>
+            <div className='container'>
+                <h2>Kalendarz Treningów</h2>
+                <Calendar
+                    localizer={localizer} // Dodaj localizer
+                    events={events}
+                    startAccessor="start"
+                    endAccessor="end"
+                    style={{height: 500}}
+                />
+            </div>
+        </>
     );
 };
 

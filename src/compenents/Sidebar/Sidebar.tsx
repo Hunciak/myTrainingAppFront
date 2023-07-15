@@ -4,7 +4,7 @@ import {GiHamburgerMenu} from "react-icons/gi";
 import {AiOutlineHome} from "react-icons/ai";
 import {Link} from "react-router-dom";
 import {MdLogout} from "react-icons/md";
-import {CgProfile} from "react-icons/cg";
+import {CgGym, CgProfile} from "react-icons/cg";
 
 export const Sidebar = () => {
     const [show, setShow] = useState(false);
@@ -23,8 +23,10 @@ export const Sidebar = () => {
                 <li>
                     <Link to='/profil'><CgProfile className='icon'/></Link>
                     <Link to='/profil'>{show ? <h2>Mój profil</h2> :""}</Link>
-
-
+                </li>
+                <li>
+                    <Link to='/createexercise'><CgGym className='icon'/></Link>
+                    <Link to='/createexercise'>{show ? <h2>Mój trening</h2> : ""}</Link>
                 </li>
                 <li>
                     <Link to='/logout'><MdLogout className='icon'/></Link>

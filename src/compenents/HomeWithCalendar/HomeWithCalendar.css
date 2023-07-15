@@ -1,7 +1,8 @@
 .calendar-container {
-    height: 500px;
+    height: 300px;
     margin-bottom: 20px;
 }
+
 
 .event-form {
     margin-top: 20px;
@@ -28,6 +29,8 @@
 /* react-big-calendar styles */
 
 .rbc-calendar {
+    width: 500vw;
+    margin-top: 70px;
     height: 100%;
 }
 
