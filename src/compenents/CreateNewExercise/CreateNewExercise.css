@@ -1,0 +1,56 @@
+
+.create-exer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-exer-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: auto;
+    border: cadetblue solid 1px;
+}
+
+.create-exer-form input,
+.create-exer-form select {
+    margin-bottom: 10px;
+}
+
+.create-exer-form p {
+    margin-bottom: 10px;
+}
+
+.create-exer-form ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.create-exer-form li {
+    margin-bottom: 10px;
+}
+
+.create-exer-form button {
+    margin-top: 10px;
+}
+
+.del-exer-button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.del-exer-button:hover {
+    background-color: #c82333;
+}
+.exer-l1 {
+    padding: 8px;
+}
+.exer-li p {
+     padding: 8px;
+ }

@@ -35,12 +35,13 @@ export const SignUp = () => {
                 body: JSON.stringify(form),
             })
             const data = await res.json();
-            console.log(data);
+            console.log("status", res.status)
+            console.log("zwrot z be: ", data.message);
             if (!checkPassword || checkPassword.validPassword !== form.password) {
                 alert('Podane hasła nie są takie same.');
             }
 
-        } catch (e) {
+        } catch (e:any) {
             console.log('Błąd...', e);
         } finally {
             setLoading(false);

@@ -27,8 +27,8 @@ export const Sidebar = () => {
 
                 </li>
                 <li>
-                    <Link to='/'><MdLogout className='icon'/></Link>
-                    <Link to='/'>{show ? <h2>Wyloguj</h2> :""}</Link>
+                    <Link to='/logout'><MdLogout className='icon'/></Link>
+                    <Link to='/logout'>{show ? <h2>Wyloguj</h2> :""}</Link>
 
 
                 </li>
