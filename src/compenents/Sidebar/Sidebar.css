@@ -49,28 +49,6 @@ h2 {
     text-decoration: none;
     color: white;
 }
-
-/*.sidebar {*/
-/*    position: fixed; !* Dodaj pozycjonowanie *!*/
-/*    top: 0; !* Ustaw pozycję górną na 0 *!*/
-/*    left: 0; !* Ustaw pozycję lewą na 0 *!*/
-/*    height: 100vh;*/
-/*    width: 11%;*/
-/*    background-color: rgb(9, 90, 144);*/
-/*    z-index: 999; !* Dodaj z-index, aby przód komponentu był na górze *!*/
-/*}*/
-
-/*.sidebar1 {*/
-/*    position: fixed; !* Dodaj pozycjonowanie *!*/
-/*    top: 0; !* Ustaw pozycję górną na 0 *!*/
-/*    left: 0; !* Ustaw pozycję lewą na 0 *!*/
-/*    height: 100vh;*/
-/*    width: 5%;*/
-/*    background-color: rgb(9, 90, 144);*/
-/*    z-index: 999; !* Dodaj z-index, aby przód komponentu był na górze *!*/
-/*}*/
-
-/*.main {*/
-/*    margin-left: 11%; !* Ustaw lewy margines tak, aby zawartość nie zachodziła na sidebar *!*/
-/*    !* lub margin-left: 5%; w przypadku sidebar1 *!*/
-/*}*/
+.desc{
+    color: white;
+}

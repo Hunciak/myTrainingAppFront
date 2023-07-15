@@ -11,7 +11,7 @@
     align-items: center;
     margin-bottom: 20px;
     width: auto;
-    border: cadetblue solid 1px;
+    border: solid 1px;
 }
 
 .create-exer-form input,
@@ -48,9 +48,11 @@
 .del-exer-button:hover {
     background-color: #c82333;
 }
+
 .exer-l1 {
     padding: 8px;
 }
+
 .exer-li p {
-     padding: 8px;
- }
+    padding: 8px;
+}

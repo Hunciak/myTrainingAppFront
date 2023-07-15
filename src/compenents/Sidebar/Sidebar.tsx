@@ -17,22 +17,20 @@ export const Sidebar = () => {
                 </div>
                 <li>
                     <Link to='/aftersignin'><AiOutlineHome className='icon'/></Link>
-                    <Link to='/aftersignin'>{show ? <h2>Home</h2> :""}</Link>
+                    <Link to='/aftersignin'>{show ? <h2 className='desc'>Home</h2> :""}</Link>
 
                 </li>
                 <li>
                     <Link to='/profil'><CgProfile className='icon'/></Link>
-                    <Link to='/profil'>{show ? <h2>Mój profil</h2> :""}</Link>
+                    <Link to='/profil'>{show ? <h2  className='desc'>Mój profil</h2> :""}</Link>
                 </li>
                 <li>
                     <Link to='/createexercise'><CgGym className='icon'/></Link>
-                    <Link to='/createexercise'>{show ? <h2>Mój trening</h2> : ""}</Link>
+                    <Link to='/createexercise'>{show ? <h2  className='desc'>Mój trening</h2> : ""}</Link>
                 </li>
                 <li>
                     <Link to='/logout'><MdLogout className='icon'/></Link>
-                    <Link to='/logout'>{show ? <h2>Wyloguj</h2> :""}</Link>
-
-
+                    <Link to='/logout'>{show ? <h2  className='desc'>Wyloguj</h2> :""}</Link>
                 </li>
             </ul>
           </div>

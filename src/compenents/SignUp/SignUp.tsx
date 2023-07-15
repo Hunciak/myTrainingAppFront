@@ -110,7 +110,7 @@ export const SignUp = () => {
                        onChange={e => updateForm('height', Number(e.target.value))}
 
                 />
-                <select onChange={e => updateForm('gender', e.target.value)}>
+                <select className='choose' onChange={e => updateForm('gender', e.target.value)}>
                     <option value="null">Wybierz płeć</option>
                     <option value="male">Mężczyzna</option>
                     <option value="female">Kobieta</option>

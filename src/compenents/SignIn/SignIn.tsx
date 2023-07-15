@@ -20,7 +20,6 @@ export const SignIn = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            console.log('doszedlem do signIn form', form)
             const res = await fetch(`http://localhost:3001/signin`, {
                 method: 'POST',
                 credentials: "include",
