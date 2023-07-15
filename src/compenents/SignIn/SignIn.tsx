@@ -37,6 +37,8 @@ export const SignIn = () => {
             } else if (res.status === 401) {
                 setErr('Email lub hasło jest nieprawidłowe.')
                 return;
+            }else if (res.status === 500){
+                setErr('Wystąpił błąd, spróbuj ponownie pózniej.')
             }
 
             console.log("res z be z tokenem", res)

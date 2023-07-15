@@ -27,12 +27,14 @@ input {
     border: none;
     border-bottom: 1px solid gray;
 }
-select{
+
+select {
     padding: 10px;
     border: none;
     border-bottom: 1px solid gray;
 }
 
-
-
-
+.error {
+    color: red;
+    margin-top: 0.8rem;
+}

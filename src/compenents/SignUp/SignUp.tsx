@@ -1,4 +1,4 @@
-import {useState, SyntheticEvent} from "react";
+import React, {useState, SyntheticEvent} from "react";
 import {IUserSignUp} from "types";
 import {Btn} from "../common/Btn";
 import './SignUp.css';
@@ -7,6 +7,7 @@ import {Link} from "react-router-dom";
 
 export const SignUp = () => {
     const [id, setId] = useState('');
+    const [err, setErr] = useState('');
     const [loading, setLoading] = useState(false);
     const [form, setForm] = useState<IUserSignUp>({
         name: '',
@@ -33,15 +34,14 @@ export const SignUp = () => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(form),
-            })
+            });
             const data = await res.json();
-            console.log("status", res.status)
-            console.log("zwrot z be: ", data.message);
-            if (!checkPassword || checkPassword.validPassword !== form.password) {
-                alert('Podane hasła nie są takie same.');
-            }
 
-        } catch (e:any) {
+            if (!checkPassword || checkPassword.validPassword !== form.password) {
+                setErr('Podane hasła nie są takie same.');
+            }
+            setErr(data.message);
+        } catch (e: any) {
             console.log('Błąd...', e);
         } finally {
             setLoading(false);
@@ -100,7 +100,6 @@ export const SignUp = () => {
                        maxLength={3}
                        required
                        onChange={e => updateForm('weight', Number(e.target.value))}
-                       // Usunąć możliwość napisania 0 na początku
 
                 />
                 <input type="text"
@@ -109,7 +108,6 @@ export const SignUp = () => {
                        maxLength={3}
                        required
                        onChange={e => updateForm('height', Number(e.target.value))}
-                    // Usunąć możliwość napisania 0 na początku
 
                 />
                 <select onChange={e => updateForm('gender', e.target.value)}>
@@ -117,6 +115,7 @@ export const SignUp = () => {
                     <option value="male">Mężczyzna</option>
                     <option value="female">Kobieta</option>
                 </select>
+                {err && <div className='error'>{err}</div>}
                 <span>Masz konto? Kliknij tutaj <Link to='/signin'>Zaloguj</Link></span>
                 <Btn text={'Zarejestruj'}/>
             </form>
