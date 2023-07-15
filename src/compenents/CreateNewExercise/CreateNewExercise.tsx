@@ -3,7 +3,6 @@ import {ICreateNewExercise, IExerciseName} from "types";
 import {Btn} from "../common/Btn";
 import {RedirectSignIn} from "../common/RedirectSignIn";
 import './CreateNewExercise.css';
-import {Logout} from "../SignIn/Logout";
 import {EditExercise} from "../EditExercise/EditExercise";
 
 export const CreateNewExercise = () => {
@@ -114,7 +113,7 @@ export const CreateNewExercise = () => {
 
         const updatedExercises = chosenExercises.map((exercise) => ({
             ...exercise,
-            setName: groupName.name,
+            set_name: groupName.name,
         }));
 
             try {
@@ -138,7 +137,7 @@ export const CreateNewExercise = () => {
     }
 
     return (
-        <div className='create-exer'>
+        <div className='create-exer' >
         <form className='create-exer-form' onSubmit={addExercise}>
             <h1>Stwórz swój plan treningowy</h1>
             {!addCustomFlag? inputExercise: selectExercise}
