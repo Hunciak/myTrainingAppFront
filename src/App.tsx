@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import {Route, Routes} from "react-router-dom";
 import {CreateNewExercise} from "./compenents/CreateNewExercise/CreateNewExercise";
@@ -7,8 +8,9 @@ import {SignIn} from "./compenents/SignIn/SignIn";
 import {Contact} from "./pages/Contact/Contact";
 import {Profile} from "./compenents/Profile/Profile";
 import {LayoutPanel} from "./Layout/LayoutPanel";
-import {EditExercise} from "./compenents/EditExercise/EditExercise";
 import {Logout} from "./compenents/SignIn/Logout";
+
+
 
 
 export const App = () => {

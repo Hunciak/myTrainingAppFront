@@ -1,46 +1,71 @@
-# Getting Started with Create React App
+Sure! Here's a sample README file for a gym application built with React, Node.js, and Express:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Gym Application
 
-## Available Scripts
+This is a gym application built with React, Node.js, and Express. The application allows users to plan and track their strength training workouts, create training plans, and monitor their progress.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- User Registration and Authentication: Users can create an account and log in to the application.
+- Workout Planning: Users can create personalized workout plans by selecting exercises, specifying sets, reps, and rest periods, and creating structured routines.
+- Progress Tracking: Users can track their workout progress by recording sets, reps, and weights for each exercise. The application provides visualizations and charts to visualize progress over time.
+- Customization: The application allows users to customize their training plans based on their fitness levels and goals.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies Used
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Front-end: React, CSS
+- Back-end: Node.js, Express
+- Database: MySQL
+- Authentication: JSON Web Tokens (JWT)
+- API Integration: Fetch API for communication between the front-end and back-end
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository: `git clone https://github.com/szymchy/myTrainingAppFront/tree/develop
+2. Install the dependencies for the server: `npm install`
 
-### `npm run build`
+## Configuration
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Create a `.env` file in the root directory of the server.
+2. Add the following environment variables:
+ACCESS_TOKEN_SECRET=dcb16b00b8141e3d048d0237f972b0a4cdc6e846a795bfc2b6085bad09e3826d8175b5587766b7351cf19883c3356904c066e50a58d905989c8c1a70cac086b5
+REFRESH_TOKEN_SECRET=c742566d38751574b7c16fcc26d530ce70ca9d357442b780c498ae87ec79af9871b997873bacf03b30a0e3680c3cfd8c9ced86ab7f52bf85cff8e85b5efe11d2
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Start the server: `npm run start-server`
+2. Access the application in your web browser at `http://localhost:3000`.
 
-### `npm run eject`
+## Contributing
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Acknowledgements
 
-## Learn More
+- [React](https://reactjs.org)
+- [Node.js](https://nodejs.org)
+- [Express](https://expressjs.com)
+- [Mysql](https://www.mysql.com/)
+- [Create React App](https://create-react-app.dev)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Presentation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Home](https://github.com/szymchy/myTrainingAppFront/assets/124246021/8c9673a4-5ed3-4177-9e1e-8e47f2599061)
+![login](https://github.com/szymchy/myTrainingAppFront/assets/124246021/83499e77-aee2-4524-8daa-a9470b82a915)
+![registry](https://github.com/szymchy/myTrainingAppFront/assets/124246021/02d257dd-8c7f-424c-b94a-b5d6a212417b)
+![profile](https://github.com/szymchy/myTrainingAppFront/assets/124246021/260560e4-1424-4340-b454-f565e9d00e03)
+![trening](https://github.com/szymchy/myTrainingAppFront/assets/124246021/30899636-687f-4fba-855d-ef243f767268)
+
+
+
+
+
+
+
+
+
+
