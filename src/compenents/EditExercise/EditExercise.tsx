@@ -24,6 +24,7 @@ export const EditExercise = () => {
                     credentials: "include",
                 })
                 RedirectSignIn(res.status);
+
                 if (res.status === 204) {
                     return setNoContent(204)
                 }
@@ -63,16 +64,10 @@ export const EditExercise = () => {
 
     }, [chosenExerciseSet]);
 
-    useEffect(() => {
-        console.log("sets: ",sets)
-    }, [sets]);
-
-
     const sendForm = async (e: SyntheticEvent) => {
         e.preventDefault();
         try {
-            console.log("wysyłąm")
-            const res = await fetch(`http://localhost:3001/user/updateexercise`, {
+            await fetch(`http://localhost:3001/user/updateexercise`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -80,8 +75,6 @@ export const EditExercise = () => {
                 credentials: "include",
                 body: JSON.stringify(sets),
             })
-
-
         } catch (e) {
             console.log(e)
         }
