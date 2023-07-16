@@ -32,6 +32,7 @@
     width: 500vw;
     margin-top: 70px;
     height: 100%;
+    padding-left: 100px;
 }
 
 .rbc-event {
@@ -74,4 +75,7 @@
 
 .rbc-agenda-content {
     white-space: normal;
+}
+.select-exercise{
+    position: absolute; top: 600px; left: 500px;
 }

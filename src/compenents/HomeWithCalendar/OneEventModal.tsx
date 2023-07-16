@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { ICreateNewExercise } from 'types';
 import {RedirectSignIn} from "../common/RedirectSignIn";
-
+import './OneEventModal.css'
 
 interface Props {
     title: string,

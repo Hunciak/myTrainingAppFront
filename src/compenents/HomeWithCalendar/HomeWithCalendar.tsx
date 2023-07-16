@@ -10,7 +10,6 @@ import {RedirectSignIn} from "../common/RedirectSignIn";
 import {OneEventModal} from "./OneEventModal";
 
 
-
 const localizer = momentLocalizer(moment);
 
 export const HomeWithCalendar = () => {
@@ -32,28 +31,29 @@ export const HomeWithCalendar = () => {
     const [toggleModal, setToggleModal] = useState<boolean>(false);
 
 
-
     useEffect(() => {
-            try {
-                (async () => {
-                    const res = await fetch(`http://localhost:3001/calendar/getevents`, {
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        credentials: "include",
-                    });
-                    RedirectSignIn(res.status);
-                    const events = await res.json();
-                    setAllEvents(events);
+        try {
+            (async () => {
+                const res = await fetch(`http://localhost:3001/calendar/getevents`, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    credentials: "include",
+                });
+                RedirectSignIn(res.status);
+                const events = await res.json();
+                setAllEvents(events);
+                if (events[0].set_name) {
                     setNewEvent(newEvent => ({
                         ...newEvent,
                         title: events[0].set_name,
                     }));
-                    await getData();
-                })();
-            } catch (e) {
-                console.log(e);
-            }
+                }
+                await getData();
+            })();
+        } catch (e) {
+            console.log(e);
+        }
     }, []);
 
     const getData = async () => {
@@ -88,13 +88,15 @@ export const HomeWithCalendar = () => {
 
 
     const selectExercise =
-        <select placeholder="Wprowadź nazwę ćwiczenia" defaultValue={allEvents[0]?.set_name} onChange={e => updateForm('title', e.target.value)}>
+        <select className='select-option' placeholder="Wprowadź nazwę ćwiczenia" defaultValue={allEvents[0]?.set_name}
+                onChange={e => updateForm('title', e.target.value)}>
             {
                 allEvents.filter((event) => {
                     return event.set_name;
                 })
                     .map((exercise) => (
-                        <option className='option-exer' key={exercise.set_name} value={exercise.set_name}>{exercise.set_name}</option>
+                        <option className='option-exer' key={exercise.set_name}
+                                value={exercise.set_name}>{exercise.set_name}</option>
                     ))
             }
         </select>
@@ -142,8 +144,8 @@ export const HomeWithCalendar = () => {
     return (
         <>
             <div className='container'>
-                <div >
-                    <h2>Kalendarz Treningów</h2>
+                <div className='select-exercise'>
+                    <h2>Zaplanuj trening</h2>
                     {selectExercise}
                     {chooseData}
                     <button onClick={handleSave}>Zapisz</button>
