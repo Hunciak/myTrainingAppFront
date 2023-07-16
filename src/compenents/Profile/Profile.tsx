@@ -20,10 +20,6 @@ export const Profile = () => {
         }
     }, [])
 
-    useEffect(() => {
-        console.log(dataUser);
-    }, [dataUser])
-
     const updateForm = (key: string, value: any): void => {
         setDataUser(prevData => {
             const updatedUser = {...prevData[0], [key]: value};
@@ -41,13 +37,11 @@ export const Profile = () => {
                 },
                 body: JSON.stringify(dataUser),
             });
-            setIsEditing(false);
+
         } catch (e) {
             console.log('Błąd', e);
         }
-
     }
-
     return (
         <>
             <Sidebar/>

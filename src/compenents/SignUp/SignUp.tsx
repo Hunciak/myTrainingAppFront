@@ -27,7 +27,6 @@ export const SignUp = () => {
         setLoading(true);
 
         try {
-            console.log("wrap przed wyslaniem", JSON.stringify(form))
             const res = await fetch(`http://localhost:3001/signup`, {
                 method: 'POST',
                 headers: {

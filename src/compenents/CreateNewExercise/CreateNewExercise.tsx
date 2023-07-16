@@ -41,7 +41,6 @@ export const CreateNewExercise = () => {
 
                 const exercises = await res.json();
                 setExerciseList(exercises);
-                console.log(exercises)
                 setNewExercise(exercise => ({
                     ...exercise,
                     name: exercises[0].name,
@@ -129,7 +128,6 @@ export const CreateNewExercise = () => {
                 body: JSON.stringify(updatedExercises),
             })
 
-            // RedirectSignIn(res.status);
             if (res.status === 200) {
                 setStatus('Pomyślnie dodano zestaw ćwiczeń');
                 setChosenExercises([])

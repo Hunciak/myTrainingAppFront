@@ -4,7 +4,6 @@ import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 import './HomeWithCalendar.css';
-import {Sidebar} from "../Sidebar/Sidebar";
 
 const localizer = momentLocalizer(moment);
 

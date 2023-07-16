@@ -40,7 +40,6 @@ export const SignIn = () => {
                 setErr('Wystąpił błąd, spróbuj ponownie pózniej.')
             }
 
-            console.log("res z be z tokenem", res)
             const getId = await res.json();
             setId(getId.signIn);
 
