@@ -57,6 +57,7 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 ![Home](https://github.com/szymchy/myTrainingAppFront/assets/124246021/8c9673a4-5ed3-4177-9e1e-8e47f2599061)
 ![login](https://github.com/szymchy/myTrainingAppFront/assets/124246021/83499e77-aee2-4524-8daa-a9470b82a915)
 ![registry](https://github.com/szymchy/myTrainingAppFront/assets/124246021/02d257dd-8c7f-424c-b94a-b5d6a212417b)
+![calendar](https://github.com/szymchy/myTrainingAppFront/assets/124246021/cfdeec4e-0230-4a77-9343-bc1b1d58dddb)
 ![profile](https://github.com/szymchy/myTrainingAppFront/assets/124246021/260560e4-1424-4340-b454-f565e9d00e03)
 ![trening](https://github.com/szymchy/myTrainingAppFront/assets/124246021/30899636-687f-4fba-855d-ef243f767268)
 
