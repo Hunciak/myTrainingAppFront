@@ -1,4 +1,4 @@
-Sure! Here's a sample README file for a gym application built with React, Node.js, and Express:
+This project has been created with collaborator Szymon: github: https://github.com/szymchy, LinkedIn: 
 
 # Gym Application
 
