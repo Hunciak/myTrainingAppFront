@@ -1,0 +1,81 @@
+.calendar-container {
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+
+.event-form {
+    margin-top: 20px;
+}
+
+.event-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.event-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.event-form button:hover {
+    background-color: #0056b3;
+}
+
+/* react-big-calendar styles */
+
+.rbc-calendar {
+    width: 500vw;
+    margin-top: 70px;
+    height: 100%;
+    padding-left: 100px;
+}
+
+.rbc-event {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    padding: 2px 4px;
+    cursor: pointer;
+}
+
+.rbc-toolbar {
+    margin-bottom: 20px;
+}
+
+.rbc-today {
+    background-color: #f0f0f0;
+}
+
+.rbc-agenda-time-cell {
+    border: none;
+}
+
+.rbc-agenda-date-cell,
+.rbc-agenda-time-cell {
+    padding: 4px;
+}
+
+.rbc-agenda-date-cell {
+    font-weight: bold;
+}
+
+.rbc-agenda-time-cell {
+    color: #777;
+}
+
+.rbc-agenda-event-cell {
+    border: none;
+    padding: 4px;
+}
+
+.rbc-agenda-content {
+    white-space: normal;
+}
+.select-exercise{
+    position: absolute; top: 600px; left: 500px;
+}

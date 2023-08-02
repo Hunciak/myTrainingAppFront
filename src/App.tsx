@@ -1,26 +1,30 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Route, Routes} from "react-router-dom";
+import {CreateNewExercise} from "./compenents/CreateNewExercise/CreateNewExercise";
+import {Layout} from "./Layout/Layout";
+import {SignUp} from "./compenents/SignUp/SignUp";
+import {SignIn} from "./compenents/SignIn/SignIn";
+import {Contact} from "./pages/Contact/Contact";
+import {Profile} from "./compenents/Profile/Profile";
+import {LayoutPanel} from "./Layout/LayoutPanel";
+import {Logout} from "./compenents/SignIn/Logout";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+
+export const App = () => {
+    return (
+        <Routes>
+            <Route path='/signup' element={<SignUp/>}/>
+            <Route path='/logout' element={<Logout/>}/>
+            <Route path='/createexercise' element={<CreateNewExercise/>}/>
+            <Route path='/aftersignin' element={<LayoutPanel/>}/>
+            <Route path='/contact' element={<Contact/>}/>
+            <Route path='/' element={<Layout/>}/>
+            <Route path='/signin' element={<SignIn/>}/>
+            <Route path='/profil' element={<Profile/>}/>
+
+        </Routes>
+    );
 }
-
-export default App;

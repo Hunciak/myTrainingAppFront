@@ -1,0 +1,54 @@
+* {
+    text-decoration: none;
+}
+
+.sidebar {
+    position: fixed;
+    height: 100vh;
+    width: 11%;
+    background-color: rgb(9, 90, 144);
+    top: 0;
+    left: 0;
+}
+
+.sidebar1 {
+    position: fixed;
+    height: 100vh;
+    width: 5%;
+    background-color: rgb(9, 90, 144);
+    top: 0;
+    left: 0;
+}
+
+.main {
+    text-align: start;
+    margin: 0;
+}
+
+.icon {
+    height: 30px;
+    width: 30px;
+    color: white;
+}
+
+ul {
+    padding: 15px 0 0 15px;
+    list-style: none;
+}
+
+li {
+    text-align: start;
+    margin-top: 16px;
+    font-size: 22px;
+    display: flex;
+}
+
+h2 {
+    font-size: 22px;
+    margin: 5px 0 0 10px;
+    text-decoration: none;
+    color: white;
+}
+.desc{
+    color: white;
+}
